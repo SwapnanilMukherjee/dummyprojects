@@ -77,6 +77,10 @@ def equal():
 
     elif f == 5:
         result = first % second
+
+    if result.is_integer() == True:
+        result = int(result)
+
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
@@ -84,6 +88,8 @@ def equal():
 def sinf():
     current = float(InputBox.get())
     result = sin(radians(current))
+    if result.is_integer() == True:
+        result = int(result)
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
@@ -91,6 +97,8 @@ def sinf():
 def cosf():
     current = float(InputBox.get())
     result = cos(radians(current))
+    if result.is_integer() == True:
+        result = int(result)
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
@@ -102,6 +110,8 @@ def tanf():
     else:
         current = float(InputBox.get())
         result = tan(radians(current))
+        if result.is_integer() == True:
+            result = int(result)
         InputBox.delete(0, END)
         InputBox.insert(0, result)
 
@@ -109,6 +119,8 @@ def tanf():
 def logf():
     current = float(InputBox.get())
     result = log(current, 10)
+    if result.is_integer() == True:
+        result = int(result)
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
@@ -116,6 +128,8 @@ def logf():
 def sqrtf():
     current = float(InputBox.get())
     result = sqrt(current)
+    if result.is_integer() == True:
+        result = int(result)
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
@@ -134,16 +148,16 @@ def clear():
 
 # creating buttons
 
-b1 = Button(root, text = "1", padx = 30, pady = 10, command = lambda : b_click(1))
-b2 = Button(root, text = "2", padx = 30, pady = 10, command = lambda : b_click(2))
-b3 = Button(root, text = "3", padx = 30, pady = 10, command = lambda : b_click(3))
-b4 = Button(root, text = "4", padx = 30, pady = 10, command = lambda : b_click(4))
-b5 = Button(root, text = "5", padx = 30, pady = 10, command = lambda : b_click(5))
-b6 = Button(root, text = "6", padx = 30, pady = 10, command = lambda : b_click(6))
-b7 = Button(root, text = "7", padx = 30, pady = 10, command = lambda : b_click(7))
-b8 = Button(root, text = "8", padx = 30, pady = 10, command = lambda : b_click(8))
-b9 = Button(root, text = "9", padx = 30, pady = 10, command = lambda : b_click(9))
-b0 = Button(root, text = "0", padx = 30, pady = 10, command = lambda : b_click(0))
+b1 = Button(root, text = "1", padx = 30, pady = 10, command = lambda:b_click(1))
+b2 = Button(root, text = "2", padx = 30, pady = 10, command = lambda:b_click(2))
+b3 = Button(root, text = "3", padx = 30, pady = 10, command = lambda:b_click(3))
+b4 = Button(root, text = "4", padx = 30, pady = 10, command = lambda:b_click(4))
+b5 = Button(root, text = "5", padx = 30, pady = 10, command = lambda:b_click(5))
+b6 = Button(root, text = "6", padx = 30, pady = 10, command = lambda:b_click(6))
+b7 = Button(root, text = "7", padx = 30, pady = 10, command = lambda:b_click(7))
+b8 = Button(root, text = "8", padx = 30, pady = 10, command = lambda:b_click(8))
+b9 = Button(root, text = "9", padx = 30, pady = 10, command = lambda:b_click(9))
+b0 = Button(root, text = "0", padx = 30, pady = 10, command = lambda:b_click(0))
 b_point = Button(root, text = ".", padx = 31.4, pady = 10, command = lambda:b_click('.'))
 
 b_add = Button(root, text = "+", padx = 29, pady = 10, command = add)
@@ -159,8 +173,7 @@ b_tan = Button(root, text = "tan", padx = 29, pady = 10, command = tanf)  # func
 b_log = Button(root, text = "log", padx = 28.5, pady = 10, command = logf)  # functions created
 b_sqrt = Button(root, text = "S.Root", padx = 20, pady = 10, command = sqrtf)  # functions created
 b_del = Button(root, text = "Del", padx = 29, pady = 10, command = delete)  # functions created
-b_modulus = Button(root, text = "%", padx = 28, pady = 10,
-                   command = lambda:mod(float(InputBox.get())))  # functions created
+b_modulus = Button(root, text = "%", padx = 28, pady = 10, command = mod)  # functions created
 
 # arranging buttons in the windows
 
