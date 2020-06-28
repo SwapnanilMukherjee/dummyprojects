@@ -62,6 +62,10 @@ def equal():
     global second
     second = float(InputBox.get())
     global first
+    global f
+
+    if f == 0:
+        result = float(InputBox.get())
 
     if f == 1:
         result = first + second
@@ -80,7 +84,7 @@ def equal():
 
     if result.is_integer() == True:
         result = int(result)
-
+    f = 0
     InputBox.delete(0, END)
     InputBox.insert(0, result)
 
