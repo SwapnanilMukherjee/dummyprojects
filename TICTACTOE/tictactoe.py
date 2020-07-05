@@ -85,7 +85,7 @@ def button_click(b_name, row_n, column_n, b_no):
         root.quit()
 
     elif c == 9 :
-        messagebox.showinfo('Finished', "Game Over")
+        messagebox.showinfo('Finished', "Match Draw")
         time.sleep(0.5)
         root.quit()
 
